@@ -13,12 +13,10 @@ https://ant.apache.org/manual/index.html
 Labs Backend service:
 https://github.com/wso2-docs/WSO2_EI/blob/master/Back-End-Service/Hospital-Service-JDK11-2.0.0.jar
 
-Labs solution sources:
+Labs pre-built exercises:
 https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/StoreAndForwardTutorial.zip
 https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/RequestRoutingTutorial.zip
 https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/TransformingContentTutorial.zip
 https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/ExposingSeveralServicesTutorial.zip
 https://github.com/wso2-docs/WSO2_EI/blob/master/Quick_Start_Guide_Artifacts/dataServiceSample.zip
 https://github.com/wso2-docs/WSO2_EI/blob/master/Integration-Tutorial-Artifacts/StoreAndForwardTutorial.zip
-
-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
