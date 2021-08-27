@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "d613fc93-cb0b-4651-9a6e-b3bd5db35b4e",
+		"name": "neorisTraining",
+		"description": "Collection of calls required to test laboratories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Enterprise Integrator",
+			"item": [
+				{
+					"name": "1.-Sending a Simple Message to a Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8280/healthcare/querydoctor/surgery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"healthcare",
+								"querydoctor",
+								"surgery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.Using Inbound Endpoints ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8285/healthcare/querydoctor/surgery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8285",
+							"path": [
+								"healthcare",
+								"querydoctor",
+								"surgery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.Routing Requests Based on Message Content",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"patient\": {\n    \"name\": \"John Doe\",\n    \"dob\": \"1940-03-19\",\n    \"ssn\": \"234-23-525\",\n    \"address\": \"California\",\n    \"phone\": \"8770586755\",\n    \"email\": \"johndoe@gmail.com\"\n  },\n  \"doctor\": \"thomas collins\",\n  \"hospital\": \"grand oak community hospital\",\n  \"appointment_date\": \"2025-04-02\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8280/healthcare/categories/surgery/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"healthcare",
+								"categories",
+								"surgery",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.Transforming Message Content",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"John Doe\",\n\"dob\": \"1990-03-19\",\n\"ssn\": \"234-23-525\",\n\"address\": \"California\",\n\"phone\": \"8770586755\",\n\"email\": \"johndoe@gmail.com\",\n\"doctor\": \"thomas collins\",\n\"hospital\": \"grand oak community hospital\",\n\"cardNo\": \"7844481124110331\",\n\"appointment_date\": \"2025-04-02\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8280/healthcare/categories/surgery/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"healthcare",
+								"categories",
+								"surgery",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.Exposing Several Services",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"John Doe\",\n\"dob\": \"1940-03-19\",\n\"ssn\": \"234-23-525\",\n\"address\": \"California\",\n\"phone\": \"8770586755\",\n\"email\": \"johndoe@gmail.com\",\n\"doctor\": \"thomas collins\",\n\"hospital\": \"grand oak community hospital\",\n\"cardNo\": \"7844481124110331\",\n\"appointment_date\": \"2025-04-02\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8280/healthcare/categories/surgery/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"healthcare",
+								"categories",
+								"surgery",
+								"reserve"
+							]
+						},
+						"description": "Same servie like 5, but using a template to write to log"
+					},
+					"response": []
+				},
+				{
+					"name": "6. Exposing Several Services Using Templates",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"John Doe\",\n\"dob\": \"1940-03-19\",\n\"ssn\": \"234-23-525\",\n\"address\": \"California\",\n\"phone\": \"8770586755\",\n\"email\": \"johndoe@gmail.com\",\n\"doctor\": \"thomas collins\",\n\"hospital\": \"grand oak community hospital\",\n\"cardNo\": \"7844481124110331\",\n\"appointment_date\": \"2025-04-02\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8280/healthcare/categories/surgery/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"healthcare",
+								"categories",
+								"surgery",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. Storing And Forwarding Messages ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"John Doe\",\n\"dob\": \"1940-03-19\",\n\"ssn\": \"234-23-525\",\n\"address\": \"California\",\n\"phone\": \"8770586755\",\n\"email\": \"johndoe@gmail.com\",\n\"doctor\": \"thomas collins\",\n\"hospital\": \"grand oak community hospital\",\n\"cardNo\": \"7844481124110331\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8280/healthcare/categories/surgery/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"healthcare",
+								"categories",
+								"surgery",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.1. Sending a Simple Message to a Datasource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8280/services/DOCTORS_DataService/getDoctors?SPECIALITY=surgery",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"services",
+								"DOCTORS_DataService",
+								"getDoctors"
+							],
+							"query": [
+								{
+									"key": "SPECIALITY",
+									"value": "surgery"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.2. Sending a Simple Message to a Datasource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8280/services/DOCTORS_DataService/getAllDoctors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"services",
+								"DOCTORS_DataService",
+								"getAllDoctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9. Using the Gmail Connector",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\": \"John Doe\",\n\"dob\": \"1940-03-19\",\n\"ssn\": \"234-23-525\",\n\"address\": \"California\",\n\"phone\": \"8770586755\",\n\"email\": \"fyp.techno@gmail.com\",\n\"doctor\": \"thomas collins\",\n\"hospital\": \"grand oak community hospital\",\n\"cardNo\": \"7844481124110331\",\n\"appointment_date\": \"2025-04-02\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8280/healthcare/categories/surgery/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8280",
+							"path": [
+								"healthcare",
+								"categories",
+								"surgery",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Request for WSO2 Enterpise integrator labs"
+		},
+		{
+			"name": "API Manager",
+			"item": [
+				{
+					"name": "1.1. Obtener token con grant_type password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic UjdQRkhCU3hFT2x1RXRaNklVOGd0cm94Y2VBYTpYTXg5RXFmRFNLbTZZR3ppeXlzOGRRdXJKZlVh"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:8243/token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8243",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.2. Obtener token con grant_type credentials",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic UjdQRkhCU3hFT2x1RXRaNklVOGd0cm94Y2VBYTpYTXg5RXFmRFNLbTZZR3ppeXlzOGRRdXJKZlVh"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:8243/token",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8243",
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. get menu",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJmYWxjYW9AY2FyYm9uLnN1cGVyIiwiYXVkIjoiUjdQRkhCU3hFT2x1RXRaNklVOGd0cm94Y2VBYSIsIm5iZiI6MTYyOTc0NTM2MiwiYXpwIjoiUjdQRkhCU3hFT2x1RXRaNklVOGd0cm94Y2VBYSIsInNjb3BlIjoiYW1fYXBwbGljYXRpb25fc2NvcGUgb3JkZXJfcGl6emEiLCJpc3MiOiJodHRwczpcL1wvbG9jYWxob3N0Ojk0NDNcL29hdXRoMlwvdG9rZW4iLCJleHAiOjE2Mjk3NDg5NjIsImlhdCI6MTYyOTc0NTM2MiwianRpIjoiZjZlZDQ0ZTMtODI3ZC00NDQ1LWJlYzAtNTNmY2E4ZWRkNTQzIn0.JycKu0JPXxB94PN2J3JP2EVwzpbnE4kPcpxyv-WQNK9e6D73i_Es_6HLFQUEDfMEhoVAKfiMVruSvDi1u6gc15zWmZyx0fBt572hd9EmYLlKcDEWbYnIJID2xZCwCYGGZb8B8EeFr0pUTaLyk9PqOcgkMKsM421-nxs68ILDl8Od2XH1BE21wMQC0LsGfPWkUPIeoBLBPVcpq435HB6lU1E9OkQ9Mr7F7JsKlwdcMXU9R8O-X2HcpOPaSWp081CBAv5pGl-7Sa4f7CaM_6fjqkuFAGQK-9pvzjecWI3VjQX6rSMOrTulgFMJVJ9ZIJntEIER4vAeSZwq2Gv3yEIRSQ"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:8243/pizzashack/1.0.0/menu",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8243",
+							"path": [
+								"pizzashack",
+								"1.0.0",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Requests for WSO2 APIM labs"
+		}
+	]
+}

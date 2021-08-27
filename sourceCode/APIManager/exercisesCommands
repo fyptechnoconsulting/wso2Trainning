@@ -1,0 +1,24 @@
+9. APIM 3.2.0 Practical Exercise_ Creating API Project using CLI Tool
+
+./apictl --help
+
+./apictl add-env -e dev --apim https://localhost:9443 --token https://localhost:8243/token
+
+./apictl login dev -u admin -p admin -k
+
+./apictl init PetstoreAPI --oas https://petstore.swagger.io/v2/swagger.json
+
+./apictl import-api --file ./PetstoreAPI --environment dev -k
+
+***************************************************************************
+10. APIM 3.2.0 Practical Exercise _ Migrating APIs using the API Controller Tool
+
+./apictl add-env -e production --apim https://localhost:9445 --token https://localhost:8245/token
+
+./apictl login dev -u admin -p admin -k
+
+./apictl export-api -n PizzaShackAPI -v 1.0.0 -r admin -e dev -k
+
+./apictl login production -u admin -p admin -k
+
+./apictl import-api -f PizzaShackAPI_1.0.0.zip -e production -k
